@@ -1,0 +1,17 @@
+{
+    "name": "esampaio/epoxy",
+    "type": "library",
+    "description": "Easily attach files to any Symfony2 Entity.",
+    "keywords": ["epoxy", "file", "attachments", "aws", "upload", "s3", "file upload", "paperclip"],
+    "homepage": "http://esampaio.github.io/epoxy",
+    "license": "MIT",
+    "authors": [
+        {"name": "Eduardo Sampaio", "email": "eduardo@esampaio.com"}
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0": { "Esampaio\\Epoxy\\": "lib/" }
+    }
+}
