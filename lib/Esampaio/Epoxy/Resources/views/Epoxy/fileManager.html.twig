@@ -1,0 +1,23 @@
+<legend>{% trans %}File Manager{% endtrans %}</legend>
+<div class="file-uploader"></div>
+{% javascripts 
+    '@GlossyCoreBundle/Resources/public/js/underscore-min.js'
+    '@GlossyCoreBundle/Resources/public/js/jquery-ui.min.js'
+    '@PunkAveFileUploaderBundle/Resources/public/js/jquery.fileupload.js'
+    '@PunkAveFileUploaderBundle/Resources/public/js/FileUploader.js' %}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+<script type="text/javascript">
+$(function() {
+    new PunkAveFileUploader({ 
+        'uploadUrl': {{ path('upload', { 'folder': uploadId }) | json_encode | raw }},
+        'viewUrl': {{ "/uploads/tmp/attachments/#{uploadId}" | json_encode | raw }},
+        'el': '.file-uploader',
+        'existingFiles': {{ existingFiles | json_encode | raw }},
+        'delaySubmitWhileUploading': '.edit-form'
+    });
+});
+</script>
+{% include "PunkAveFileUploaderBundle:Default:templates.html.twig" %}
+
